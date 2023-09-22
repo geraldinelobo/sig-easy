@@ -10,6 +10,7 @@ import sequelize from "../db/connect.js";
 //importo modelos
 
 import Alumno from "./alumno/modelo.js";
+import Profesor from "./profesor/modelo.js"
 
 class Server {
     
@@ -33,6 +34,8 @@ class Server {
 
     routes(){
         this.app.use(Alumno);
+        this.app.use(Profesor);
+
     }
 
     middlewares(){
