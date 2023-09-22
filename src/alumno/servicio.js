@@ -13,17 +13,33 @@ export class AlumnoService {
             throw new Error(error);
         }
     }
+
+
     async getById(id) {
-        return await this.alumnoRepository.getById(id);
+        try{
+            return await this.alumnoRepository.findByPk(id);
+        } catch (error){
+            throw new Error(error);
+        }
     }
+
+
     async create(alumno) {
         return await this.alumnoRepository.create(alumno);
     }
+
+
     async update(id, alumno) {
-        return await this.alumnoRepository.update(id, alumno);
+        return await this.alumnoRepository.update(alumno, {
+            where: {
+                id
+            }
+        });
     }
+
+
     async delete(id) {
-        return await this.alumnoRepository.delete(id);
+        return await this.alumnoRepository.destroy({where: {id}});
     }
 
 }

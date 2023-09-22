@@ -1,4 +1,6 @@
+//importo Sequelize
 import Sequelize from 'sequelize';
+//configuro el dotenv
 import dotenv from 'dotenv';
 dotenv.config();
 

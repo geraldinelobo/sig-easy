@@ -17,10 +17,13 @@ class Server {
         this.app = Express();
         this.port = process.env.PORT || 8080;
         
+        //HTTP server
         this.server = http.createServer (this.app);
     }
 
-    async dbConnection(){
+
+
+    async dbConnection(){ //db connection
         try {
             await sequelize.authenticate();
         } catch (error){
@@ -33,7 +36,7 @@ class Server {
     }
 
     middlewares(){
-            //CORS
+    //CORS
     this.app.use(cors());
 
     //Lectura y parseo del body
@@ -45,9 +48,10 @@ class Server {
     }
 
     execute() {
-        this.middlewares();
-        this.routes();
-        this.dbConnection()
+        this.middlewares(); //Middelwares
+        this.routes(); //routes
+        this.dbConnection() //DB
+        //listen
         this.server.listen(this.port, () => {
             console.log('Server listening on port' + this.port );
         });
