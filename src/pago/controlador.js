@@ -6,31 +6,31 @@ import  PagoService  from "./servicio.js";
 const router = Router();
 
 //definir api REST
-const PagoService = new PagoService();
+const pagoService = new PagoService();
 
 
 router.get('/', async (req, res) => {
-    const pagos = await PagoService.getAll();
+    const pagos = await pagoService.getAll();
     res.json(pagos);
 });
 
 router.post('/', async (req, res)=> {
-    const pago = await PagoService.create(req.body);
+    const pago = await pagoService.create(req.body);
     res.json(pago);
 });
 
 router.get('/:id', async (req, res) =>{
-    const pago = await PagoService.getById(req.params.id);
+    const pago = await pagoService.getById(req.params.id);
     res.json(pago);
 });
 
 router.put('/:id', async (req, res) => {
-    const pago = await PagoService.update(req.params.id. req.body);
+    const pago = await pagoService.update(req.params.id. req.body);
     res.json(pago);
 });
 
 router.delete('/:id', async (req, res) => {
-    const pago = await PagoService.delete(req.params.id);
+    const pago = await pagoService.delete(req.params.id);
     res.json(pago);
 });
 
