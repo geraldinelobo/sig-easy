@@ -9,11 +9,14 @@ import sequelize from "../db/connect.js";
 
 //importo modelos
 
-import Alumno from "./alumno/modelo.js";
-import Profesor from "./profesor/modelo.js";
-import Curso from "./curso/modelo.js";
-import Aula from "./aula/modelo.js";
-import Pago from "./pago/modelo.js";
+import {
+    Alumno,
+    Profesor,
+    Curso,
+    Aula,
+    Pago,
+    Telefono
+} from "./index.js";
 
 class Server {
     
@@ -41,6 +44,7 @@ class Server {
         this.app.use(Curso);
         this.app.use(Aula);
         this.app.use(Pago);
+        this.app.use(Telefono);
 
     }
 
