@@ -15,7 +15,9 @@ import {
     Curso,
     Aula,
     Pago,
-    Telefono
+    Telefono, 
+    Direccion,
+    Nivel
 } from "./index.js";
 
 class Server {
@@ -45,6 +47,8 @@ class Server {
         this.app.use(Aula);
         this.app.use(Pago);
         this.app.use(Telefono);
+        this.app.use(Direccion);
+        this.app.use(Nivel);
 
     }
 
