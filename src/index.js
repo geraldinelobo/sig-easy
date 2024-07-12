@@ -6,6 +6,7 @@ import Pago from "./pago/modelo.js";
 import Telefono from "./telefono/modelo.js";
 import Direccion from "./direccion/modelo.js";
 import Nivel from "./nivel/modelo.js";
+import Clase from "./clase/modelo.js";
 
 export {
     Alumno,
@@ -15,7 +16,8 @@ export {
     Pago,
     Telefono,
     Direccion,
-    Nivel
+    Nivel,
+    Clase
 }
 
 
