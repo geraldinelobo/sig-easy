@@ -15,7 +15,7 @@ class DireccionService {
 
     async  getById(id){
         try {
-            return await this.direccionRepositoryRepository.findByPk(id);
+            return await this.direccionRepository.findByPk(id);
         } catch (error) { 
             throw new Error(error);
         }
